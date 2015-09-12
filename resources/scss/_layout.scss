@@ -6,15 +6,14 @@
 }
 .l-canvas-buffer {
   position: relative;
-  width: 600px;
-  height: 800px;
+  /*width: 600px; height: 800px;*/
   padding: 10px;
 }
 .l-canvas-wrapper {
   position: relative;
-  width: 620px;
-  height: 820px;
+  width: 100%;
+  height: auto;
 }
 .l-center-canvas {
-  margin: 50px auto;
+  margin: 1em 2em;
 }
