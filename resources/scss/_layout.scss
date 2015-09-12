@@ -1,7 +1,7 @@
 .l-canvas {
   position: relative;
-  width: 600px;
-  height: 800px;
+  // width: 600px;
+  // height: 800px;
   padding: 0px;
 }
 .l-canvas-buffer {
@@ -16,4 +16,13 @@
 }
 .l-center-canvas {
   margin: 1em 2em;
+}
+
+#imageCanvas {
+    height: 70%;
+    width: 70%;
+/*     background-color: green;
+     */}
+canvas {
+    display: block;
 }
