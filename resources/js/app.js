@@ -86,18 +86,31 @@ var app = {
     this.backgroundDropdown = new Dropdown($addBackground, data.backgrounds, 'background');
 
     // LISTEN FOR CLICK EVENT ON DROPDOWNS
-    $('.dropdown').on('click', '.dropdown-button', function(e) {
-      e.preventDefault();
-      var button = $(e.currentTarget);
-      var type = button.data('type');
-      var name = button.data('name');
+    // $('.dropdown').on('click', '.dropdown-button', function(e) {
+    //   e.preventDefault();
+    //   var button = $(e.currentTarget);
+    //   var type = button.data('type');
+    //   var name = button.data('name');
 
-      switch(type) {
-        case 'furniture': self.addFurniture(name); break;
-        case 'background': self.changeBackground(name); break;
-      }
+    //   switch(type) {
+    //     case 'furniture': self.addFurniture(name); break;
+    //     case 'background': self.changeBackground(name); break;
+    //   }
+    // });
+
+    $('.imageLs').on('click', function(e) {
+        e.preventDefault();
+        var af = $(this).css("background");
+
+
+
+        var button = $(e.currentTarget);
+        self.addFurniture(af);
     });
+
+
   },
+
 
 
   /*

@@ -71,8 +71,17 @@ var Furniture = function(snapshot, app) {
       "left": parseInt(this.left, 10),
       "zIndex": parseInt(this.zIndex, 10),
     });
+    if (this.type) {
+      var a = this.type;
+      console.log(a);
 
-    $('.furniture-background', this.element).css("background", "url(" + "http://i.walmartimages.com/i/p/00/02/99/86/91/0002998691514_Finish_Abby-Oak_SW_100X100.jpg" + ") center center no-repeat");
+    }
+
+      
+     //a = a.replace("")
+
+
+    $('.furniture-background', this.element).css("background", a);
 
 
     // SET ACTIVE STATE
