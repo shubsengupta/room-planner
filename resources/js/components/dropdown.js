@@ -3,6 +3,8 @@
 *
 */
 
+var wtf = false; // I hate life, and have no idea why it was looping twice
+
 var Dropdown = function($parent, data, type) {
   var ListTemplate = _.template($('#template-dropdown').html());
   var liTemplate = _.template($('#template-dropdown-item').html());
@@ -19,76 +21,72 @@ var Dropdown = function($parent, data, type) {
     });
   }
 
-
-
-  
-
     // ADD DROPDOWN TO DOM
   $parent.append(ListTemplate({items: buttonList}));
 
+  while(wtf == false) {
+    wtf = true;
 
-  var ItemList;
-    $.ajax({
-      method: "GET",
-      async: false,
-      url: "http://api.walmartlabs.com/v1/search?query=desk&format=json&apiKey=3dvh2s8d9fpnxskz7n483scn",
-      success: function(response){
-        ItemList = response.items;
-      }
-    })
+      var deskList = [];
+      $.ajax({
+        method: "GET",
+        async: true,
+        url: "http://api.walmartlabs.com/v1/search?query=desk&format=json&apiKey=3dvh2s8d9fpnxskz7n483scn",
+        success: function(response){
+          deskList = response.items;
 
-    for(var i = 0; i < ItemList.length; i++) {
-      var deskNode = $('a[data-name=DESK]');
-      $( "<div class='imageLs' style='background: url(" + ItemList[i].thumbnailImage + ") no-repeat;background-size: cover;'></div>" ).insertAfter( deskNode );
+          for(var i = 0; i < deskList.length -1; i++) {
+            var deskNode = $('a[data-name=DESK]');
+            $( "<div class='imageLs' style='background: url(" + deskList[i].thumbnailImage + ") no-repeat;background-size: cover;'></div>" ).insertAfter( deskNode );
+          }
+        }
+      })
+
+      var chairList = [];
+      $.ajax({
+        method: "GET",
+        async: true,
+        url: "http://api.walmartlabs.com/v1/search?query=chair&format=json&apiKey=3dvh2s8d9fpnxskz7n483scn",
+        success: function(response){
+          chairList = response.items;
+
+          for(var i = 0; i < chairList.length -1; i++) {
+            var chairNode = $('a[data-name=CHAIR]');
+            $( "<div class='imageLs' style='background: url(" + chairList[i].thumbnailImage + ") no-repeat;background-size: cover;'></div>" ).insertAfter( chairNode );
+          }
+        }
+      })
+
+      var lampList = [];
+      $.ajax({
+        method: "GET",
+        async: true,
+        url: "http://api.walmartlabs.com/v1/search?query=Lamp&format=json&apiKey=3dvh2s8d9fpnxskz7n483scn",
+        success: function(response){
+          lampList = response.items;
+
+           for(var i = 0; i < lampList.length -1; i++) {
+            var lampNode = $('a[data-name=LAMP]');
+            $( "<div class='imageLs' style='background: url(" + lampList[i].thumbnailImage + ") no-repeat;background-size: cover;'></div>" ).insertAfter( lampNode );
+          }
+        }
+      })
+     
+      var bedList = [];
+      $.ajax({
+        method: "GET",
+        async: true,
+        url: "http://api.walmartlabs.com/v1/search?query=Bed&format=json&apiKey=3dvh2s8d9fpnxskz7n483scn",
+        success: function(response){
+          bedList = response.items;
+
+          for(var i = 0; i < bedList.length -1; i++) {
+            var bedNode = $('a[data-name=BED]');
+            $( "<div class='imageLs' style='background: url(" + bedList[i].thumbnailImage + ") no-repeat;background-size: cover;'></div>" ).insertAfter( bedNode );
+          }
+        }
+      })
     }
-
-
-    $.ajax({
-      method: "GET",
-      async: false,
-      url: "http://api.walmartlabs.com/v1/search?query=chair&format=json&apiKey=3dvh2s8d9fpnxskz7n483scn",
-      success: function(response){
-        ItemList = response.items;
-      }
-    })
-
-    for(var i = 0; i < ItemList.length; i++) {
-      var deskNode = $('a[data-name=CHAIR]');
-      $( "<div class='imageLs' style='background: url(" + ItemList[i].thumbnailImage + ") no-repeat;background-size: cover;'></div>" ).insertAfter( deskNode );
-    }
-
-
-
-    $.ajax({
-      method: "GET",
-      async: false,
-      url: "http://api.walmartlabs.com/v1/search?query=Lamp&format=json&apiKey=3dvh2s8d9fpnxskz7n483scn",
-      success: function(response){
-        ItemList = response.items;
-      }
-    })
-
-    for(var i = 0; i < ItemList.length; i++) {
-      var deskNode = $('a[data-name=LAMP]');
-      $( "<div class='imageLs' style='background: url(" + ItemList[i].thumbnailImage + ") no-repeat;background-size: cover;'></div>" ).insertAfter( deskNode );
-    }
-
-
-
-    $.ajax({
-      method: "GET",
-      async: false,
-      url: "http://api.walmartlabs.com/v1/search?query=Bed&format=json&apiKey=3dvh2s8d9fpnxskz7n483scn",
-      success: function(response){
-        ItemList = response.items;
-      }
-    })
-
-    for(var i = 0; i < ItemList.length; i++) {
-      var deskNode = $('a[data-name=BED]');
-      $( "<div class='imageLs' style='background: url(" + ItemList[i].thumbnailImage + ") no-repeat;background-size: cover;'></div>" ).insertAfter( deskNode );
-    }
-
 
 
       //$('.dropdown-button-icon', $(this)).css("background", "url(" + ItemList[i].thumbnailImage + ") center center no-repeat");
