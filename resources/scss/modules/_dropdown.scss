@@ -18,6 +18,11 @@
   width: 500px;
   opacity: .95;
   display: none;
+  transition: all 0.5s;
+   -webkit-transition: all 0.5s;
+   max-height: 700px;
+   overflow-y: scroll;
+
 
   .dropdown-arrow {
     width: 0;
@@ -55,6 +60,16 @@
         }
       }
     }
+
+    .imageLs {
+      display: inline-block;
+      width: 33%;
+      background-color: yellow;
+      vertical-align: top;
+      padding-top: 27.5%;
+      border: 1px solid #ABABAB;
+    }
+
 
     .dropdown-button-icon {
       display: block;
