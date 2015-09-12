@@ -19,9 +19,17 @@
 }
 
 #imageCanvas {
-    height: auto;
-    width: 90%;
+  height: auto;
+  width: 90%;
 }
 canvas {
     display: block;
+}
+#imageLoader {
+  width: 32px;
+  margin-left: -55px;
+  height: 39px;
+  line-height: 38px;
+  opacity: 0;
+  z-index: 100;
 }
