@@ -254,3 +254,35 @@ $(document).ready(function() {
 
 // EXPORT MODULE
 module.exports = app;
+
+/* Add Image to Canvas */
+var imageLoader = document.getElementById('imageLoader');
+    imageLoader.addEventListener('change', handleImage, false);
+var canvas = document.getElementById('imageCanvas');
+var ctx = canvas.getContext('2d');
+
+$(document).ready(drawImage());
+$(window).resize(refreshCanvas());
+
+refreshCanvas();
+
+function refreshCanvas() {
+    //canvas/context resize
+    canvas.attr("width", $(window).get(0).innerWidth / 2);
+    canvas.attr("height", $(window).get(0).innerHeight / 2);
+    drawImage();
+}
+
+function handleImage(e){
+    var reader = new FileReader();
+    reader.onload = function(event){
+        var img = new Image();
+        img.onload = function(){
+            img.width = canvas.width;
+            img.height = canvas.height;
+            ctx.drawImage(img,0,0,canvas.width, canvas.height);
+        }
+        img.src = event.target.result;
+    }
+    reader.readAsDataURL(e.target.files[0]);     
+}
