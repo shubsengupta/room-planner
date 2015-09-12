@@ -261,7 +261,7 @@ var imageLoader = document.getElementById('imageLoader');
 var canvas = document.getElementById('imageCanvas');
 var ctx = canvas.getContext('2d');
 
-$(document).ready(drawImage());
+$(document).ready(handleImage());
 $(window).resize(refreshCanvas());
 
 refreshCanvas();
