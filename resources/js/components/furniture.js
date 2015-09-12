@@ -72,7 +72,7 @@ var Furniture = function(snapshot, app) {
       "zIndex": parseInt(this.zIndex, 10),
     });
 
-  //  $('.furniture-background', this.element).css("background", "url('resources/images/furniture/pacman.png') center center no-repeat");
+    $('.furniture-background', this.element).css("background", "url(" + "http://i.walmartimages.com/i/p/00/02/99/86/91/0002998691514_Finish_Abby-Oak_SW_100X100.jpg" + ") center center no-repeat");
 
 
     // SET ACTIVE STATE
