@@ -1,7 +1,17 @@
+html {
+	margin:0;
+	height: 100%;
+	width: 100%;
+}
+
+
 body {
-  background: $white;
+  background: white;
   font-family: "Proxima Nova", "Helvetica Neue Light", "Helvetica Neue", "Helvetica", "Arial", "Lucida Grande", sans-serif;
   margin: 0;
+  height: 100%;
+  width: 100%;
+  position: relative;
 }
 
 .clearfix {

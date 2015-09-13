@@ -11,7 +11,7 @@ var Dropdown = function($parent, data, type) {
   var buttonList = '';
 
   // LOOP THROUGH DATA & CREATE BUTTONS
-  for(var i = 0; i < data.length; i++) {
+  for(var i = 0; i < data.length - 1; i++) {
     buttonList = buttonList + liTemplate({
       name: data[i].name,
       description: data[i].description,
@@ -30,7 +30,7 @@ var Dropdown = function($parent, data, type) {
       var deskList = [];
       $.ajax({
         method: "GET",
-        async: true,
+        async: false,
         url: "http://api.walmartlabs.com/v1/search?query=desk&format=json&apiKey=3dvh2s8d9fpnxskz7n483scn",
         success: function(response){
           deskList = response.items;
@@ -45,7 +45,7 @@ var Dropdown = function($parent, data, type) {
       var chairList = [];
       $.ajax({
         method: "GET",
-        async: true,
+        async: false,
         url: "http://api.walmartlabs.com/v1/search?query=chair&format=json&apiKey=3dvh2s8d9fpnxskz7n483scn",
         success: function(response){
           chairList = response.items;
@@ -60,7 +60,7 @@ var Dropdown = function($parent, data, type) {
       var lampList = [];
       $.ajax({
         method: "GET",
-        async: true,
+        async: false,
         url: "http://api.walmartlabs.com/v1/search?query=Lamp&format=json&apiKey=3dvh2s8d9fpnxskz7n483scn",
         success: function(response){
           lampList = response.items;
@@ -75,7 +75,7 @@ var Dropdown = function($parent, data, type) {
       var bedList = [];
       $.ajax({
         method: "GET",
-        async: true,
+        async: false,
         url: "http://api.walmartlabs.com/v1/search?query=Bed&format=json&apiKey=3dvh2s8d9fpnxskz7n483scn",
         success: function(response){
           bedList = response.items;

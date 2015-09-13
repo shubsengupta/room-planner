@@ -71,17 +71,12 @@ var Furniture = function(snapshot, app) {
       "left": parseInt(this.left, 10),
       "zIndex": parseInt(this.zIndex, 10),
     });
-    if (this.type) {
-      var a = this.type;
-      console.log(a);
-
-    }
 
       
      //a = a.replace("")
 
 
-    $('.furniture-background', this.element).css("background", a);
+    
 
 
     // SET ACTIVE STATE
@@ -90,6 +85,16 @@ var Furniture = function(snapshot, app) {
     }
     else {
       this.element.removeClass("is-active is-top");
+      if (this.type) {
+        var a = this.type;
+//        a = a.replace("100X100", "450X450");
+        console.log(a);
+        $('.furniture-background', this.element).css("background", a);
+        this.element.resizable({ ghost: true,
+        handles: 'se',
+    aspectRatio: 1 });
+      }
+
     }
 
     // ADD TO DOM
