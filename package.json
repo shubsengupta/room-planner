@@ -26,6 +26,7 @@
     "gulp-sass": "^1.2.0",
     "gulp-webpack": "^1.0.0",
     "webpack": "^1.4.10",
-    "watson-developer-cloud": "~0.9.6"
+    "watson-developer-cloud": "~0.9.6",
+    "express": "*"
   }
 }
