@@ -89,11 +89,12 @@ var Furniture = function(snapshot, app) {
         var a = this.type;
 //        a = a.replace("100X100", "450X450");
         console.log(a);
-        $('.furniture-background', this.element).css("background", a);
+        $('.furniture-background', this.element).css("background", a[0]);
+        this.element.attr("data-backcheck",  a[1]);
         this.element.resizable({ ghost: true,
-        handles: 'se',
-    aspectRatio: 1 });
-      }
+                                  handles: 'se',
+                                aspectRatio: 1 });
+                                }
 
     }
 

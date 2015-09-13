@@ -101,13 +101,62 @@ var app = {
     $('.imageLs').on('click', function(e) {
         e.preventDefault();
         var af = $(this).css("background");
-
-
+        var bf = $(this).attr("data-backcheck");
+        var cf = [af, bf];
 
         var button = $(e.currentTarget);
-        self.addFurniture(af);
+        self.addFurniture(cf);
     });
 
+    $("#image-button").on('click', function(e) {
+        $("#imageLoader").trigger("click");
+
+    });
+    $("#checkOut").on('click', function(e) {
+      $( "#dialog" ).html("");
+      $( "#dialog" ).dialog({
+        dialogClass: "no-close",
+        buttons: [
+          {
+            text: "Check Out",
+            click: function() {
+              $( this ).dialog( "close" );
+            }
+          }
+        ]
+      });
+      var checkoutList = [];
+      $("#office-space>div.furniture").each(function(index) {
+        var $a = $(this);
+        if($a.attr("data-backcheck")) {
+            console.log($a.attr("data-backcheck"));
+            
+            $.ajax({
+              method: "GET",
+              async: false,
+              url: "http://api.walmartlabs.com/v1/items/" + $a.attr("data-backcheck") + "?apiKey=3dvh2s8d9fpnxskz7n483scn&format=json",
+              success: function(response){
+                checkoutList.push(response);
+                console.log(checkoutList);
+                $( "#dialog" ).append("<div style='width: 100%; height: 48px;'>     <div style='display:inline-block; width: 48px;height: 100%; background: url(" + response.thumbnailImage  + ") 0px 0px/cover no-repeat '></div>              <div style=' display:inline-block; width:180px; height: 100%; overflow: hidden;padding-left:5px'> $" + response.name +   "   </div>                           <div style=' display:inline-block;height:100%; margin-left:0; margin-right:0; overflow:hidden'> " + response.salePrice +   "</div>                             </div> ");
+              }
+            })
+        }
+
+      })
+
+        var total = 0;
+        for(var k = 0; k < checkoutList.length; k++) total += checkoutList[k].salePrice;
+
+        $( "#dialog" ).append("<div style='width: 100%; height: 48px;'>     <div style='display:inline-block; width: 48px;height: 100%; background: url(" + ""  + ") 0px 0px/cover no-repeat '></div>              <div style=' display:inline-block; width:180px;height: 100%; overflow: hidden;padding-left:5px'> " + "Your Total Is" +   "   </div>                           <div style=' display:inline-block;height:100%; margin-left:0; margin-right:0; overflow:hidden'> " + total +   "</div>                             </div> ");
+
+
+
+
+      
+        
+
+    });
 
   },
 

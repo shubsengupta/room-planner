@@ -37,7 +37,7 @@ var Dropdown = function($parent, data, type) {
 
           for(var i = 0; i < deskList.length -1; i++) {
             var deskNode = $('a[data-name=DESK]');
-            $( "<div class='imageLs' style='background: url(" + deskList[i].thumbnailImage + ") no-repeat;background-size: cover;'></div>" ).insertAfter( deskNode );
+            $( "<div class='imageLs' data-backCheck='" +  deskList[i].itemId +"' style='background: url(http://cdn.corporate.walmart.com/dims4/WMT/2a19d22/2147483647/thumbnail/213x80%3E/quality/90/?url=http%3A%2F%2Fcdn.corporate.walmart.com%2Faa%2F0a%2Fd71767854641859bf45e2ba07594%2Fheader-logo.png) -60px 0px/80px 20px no-repeat, url(" + deskList[i].customerRatingImage + ") right bottom/80px 16px no-repeat, url(" + deskList[i].thumbnailImage + ") 0px 0px/cover no-repeat;'></div>" ).insertAfter( deskNode );
           }
         }
       })
@@ -52,7 +52,7 @@ var Dropdown = function($parent, data, type) {
 
           for(var i = 0; i < chairList.length -1; i++) {
             var chairNode = $('a[data-name=CHAIR]');
-            $( "<div class='imageLs' style='background: url(" + chairList[i].thumbnailImage + ") no-repeat;background-size: cover;'></div>" ).insertAfter( chairNode );
+            $( "<div class='imageLs' data-backCheck='" +  chairList[i].itemId +"' style='background:url(http://cdn.corporate.walmart.com/dims4/WMT/2a19d22/2147483647/thumbnail/213x80%3E/quality/90/?url=http%3A%2F%2Fcdn.corporate.walmart.com%2Faa%2F0a%2Fd71767854641859bf45e2ba07594%2Fheader-logo.png) -60px 0px/80px 20px no-repeat, url(" + chairList[i].customerRatingImage + ") right bottom/80px 16px no-repeat, url(" + chairList[i].thumbnailImage + ") 0px 0px/cover no-repeat;'></div>" ).insertAfter( chairNode );
           }
         }
       })
@@ -67,7 +67,7 @@ var Dropdown = function($parent, data, type) {
 
            for(var i = 0; i < lampList.length -1; i++) {
             var lampNode = $('a[data-name=LAMP]');
-            $( "<div class='imageLs' style='background: url(" + lampList[i].thumbnailImage + ") no-repeat;background-size: cover;'></div>" ).insertAfter( lampNode );
+            $( "<div class='imageLs' data-backCheck='" +  lampList[i].itemId +"' style='background:url(http://cdn.corporate.walmart.com/dims4/WMT/2a19d22/2147483647/thumbnail/213x80%3E/quality/90/?url=http%3A%2F%2Fcdn.corporate.walmart.com%2Faa%2F0a%2Fd71767854641859bf45e2ba07594%2Fheader-logo.png) -60px 0px/80px 20px no-repeat, url(" + lampList[i].customerRatingImage + ") right bottom/80px 16px no-repeat, url(" + lampList[i].thumbnailImage + ") 0px 0px/cover no-repeat;'></div>" ).insertAfter( lampNode );
           }
         }
       })
@@ -82,7 +82,7 @@ var Dropdown = function($parent, data, type) {
 
           for(var i = 0; i < bedList.length -1; i++) {
             var bedNode = $('a[data-name=BED]');
-            $( "<div class='imageLs' style='background: url(" + bedList[i].thumbnailImage + ") no-repeat;background-size: cover;'></div>" ).insertAfter( bedNode );
+            $( "<div class='imageLs' data-backCheck='" +  bedList[i].itemId +"' style='background:url(http://cdn.corporate.walmart.com/dims4/WMT/2a19d22/2147483647/thumbnail/213x80%3E/quality/90/?url=http%3A%2F%2Fcdn.corporate.walmart.com%2Faa%2F0a%2Fd71767854641859bf45e2ba07594%2Fheader-logo.png) -60px 0px/80px 20px no-repeat, url(" + bedList[i].customerRatingImage + ") right bottom/80px 16px no-repeat, url(" + bedList[i].thumbnailImage + ") 0px 0px/cover no-repeat;'></div>" ).insertAfter( bedNode );
           }
         }
       })
