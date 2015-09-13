@@ -84,6 +84,8 @@
         background-size: 30px 30px;
         left: 20px;
         top: 20px;
+        min-width : 0;
+        min-height: 0;
       }
 
       &.background {
