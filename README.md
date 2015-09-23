@@ -1,14 +1,9 @@
-# Inetech Office Mover 5000 for Web
+# VisualEyes - A virtual room planner!
 
-## Setup
-0. Edit `resources/js/helpers/utils.js` and change `<your-firebase>` to the subdomain 
-   for your Firebase.
-0. Make sure you have [node.js](http://nodejs.org/) and [bower](http://bower.io/) installed.
-0. Navigate to the `/web` directory and run these commands:
+A virtual room planner inspired by and based off https://github.com/firebase/office-mover-5000
 
-        $ bower install
-        $ npm install ## or sudo npm install
-        $ gulp
+VisualEyes is a web app that lets you visualize furniture/home appliances in your room by uploading a photo and placing/scaling the object on the photo. We used Firebase, Walmart's API and HTML5 canvas to accomplish this.
 
-   Gulp automatically opens Office Mover in a web browser, and reloads when it detects changes to css, js, and html.
-# room-planner
+### This project was built in one weekend at MHacks 6
+
+To learn more about this project, please visit http://devpost.com/software/visualeyes
